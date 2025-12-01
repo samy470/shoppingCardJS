@@ -1,0 +1,26 @@
+// TypeScript INFERS the type automatically
+let name = "Alice";        // INFERRED as string
+let age = 25;             // INFERRED as number  
+let isStudent = true;     // INFERRED as boolean
+
+// You DON'T need to write:
+// let name: string = "Alice";
+
+let numbers = [1, 2, 3];           // INFERRED as number[]
+let names = ["John", "Jane"];      // INFERRED as string[]
+let mixed = [1, "hello", true];    // INFERRED as (number | string | boolean)[]
+
+interface User {
+    id: number;
+    name: string;
+    email: string;
+    age?: number;       // Optional property
+    isActive: boolean;
+}
+
+const user2: User = {
+    id: 2,
+    name: "Jane Smith",
+    email: "jane@example.com",
+    isActive: false     // age is optional, so we can omit it
+};
