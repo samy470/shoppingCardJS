@@ -1,11 +1,15 @@
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { addItem } from "../redux/cartSlice";
-import { ViewDetails } from "../redux/cartSlice";
+import { ViewDetails, fetchGames } from "../redux/cartSlice";
 import { useSelector } from "react-redux";
 
 const List = () => {
   const data = useSelector((state) => state.cart.List);
   const dispatch = useDispatch();
+  useEffect(() => {
+  dispatch(fetchGames());
+}, []);
 
   return (
     <div className="container">
